@@ -72,5 +72,5 @@ class BalancedBCEWithLogitsLoss(nn.Module):
 
     def forward(self, output: Tensor, target: Tensor) -> Tensor:
         return balanced_binary_cross_entropy_with_logits(
-            output, target, gamma=self.gamma, ignore_index=self.ignore_index, reduction="none"
+            output, target, gamma=self.gamma, ignore_index=self.ignore_index, reduction=self.reduction
         )
